@@ -1,0 +1,13 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pentagon Shape (representing a ball panel) -->
+  <path d="M200 50 L350 160 L290 330 L110 330 L50 160 Z" fill="#FFF9E3" stroke="#16A085" stroke-width="6" stroke-linejoin="round"/>
+  
+  <!-- Stitched 'U' -->
+  <path d="M140 130 V230 Q200 290 260 230 V130" fill="none" stroke="#D35400" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="20 12"/>
+  
+  <!-- Text -->
+  <text x="200" y="385" font-family="'Trebuchet MS', sans-serif" font-size="42" font-weight="bold" text-anchor="middle" fill="#2C3E50" letter-spacing="3">UNSTUFF'D</text>
+  
+  <!-- Tagline -->
+  <text x="200" y="415" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#16A085">PREMIUM EMPTY SHELLS</text>
+</svg>

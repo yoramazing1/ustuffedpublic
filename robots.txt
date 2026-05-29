@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://unstuffd-balls.surge.sh/sitemap.xml

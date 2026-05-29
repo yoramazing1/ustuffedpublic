@@ -2,46 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unstuff'd | Bulk Empty Juggling Ball Shells</title>
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAoxu_rOK73b2zeNfaG2TrqqTh1FEFM7zVZcJh18oTBEsY_S7uzjhkoElyDw6yVMI6BDUw3dpMZllkckA&currency=USD"></script>
-    <script>
-      // Intercept fetch requests to rewrite image paths
-      const originalFetch = window.fetch;
-      window.fetch = function(...args) {
-        let url = args[0];
-        if (typeof url === 'string') {
-          // Rewrite image paths from relative to CDN
-          if (url.includes('/images/') || url.includes('images/')) {
-            url = url.replace(/^\/images\//, 'https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/images/');
-            url = url.replace(/^images\//, 'https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/images/');
-          }
-          if (url.includes('/logo') || url.includes('logo')) {
-            url = url.replace(/logo\.svg/, 'https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/logo.svg');
-          }
-          args[0] = url;
-        }
-        return originalFetch.apply(this, args);
-      };
+    <meta name="description" content="Buy premium 4-panel microfiber juggling ball shells in bulk. Save 90% on international shipping by filling locally with millet. Professional 67mm standard. Perfect for DIY juggling beanbags." />
+    <meta name="keywords" content="empty juggling balls, juggling ball shells bulk, juggling beanbags DIY, circus supplies bulk, juggling ball fabric shells, microfiber juggling balls, pro juggling gear" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://unstuffd-balls.surge.sh/" />
+    <meta property="og:title" content="Unstuff'd | Bulk Empty Juggling Ball Shells" />
+    <meta property="og:description" content="Buy premium 4-panel microfiber juggling ball shells in bulk. Save 90% on international shipping by filling locally with millet." />
+    <meta property="og:image" content="https://unstuffd-balls.surge.sh/images/optimized/dsc_2684a.jpg" />
 
-      // Also patch XMLHttpRequest
-      const originalOpen = XMLHttpRequest.prototype.open;
-      XMLHttpRequest.prototype.open = function(method, url, ...rest) {
-        if (typeof url === 'string') {
-          if (url.includes('/images/') || url.includes('images/')) {
-            url = url.replace(/^\/images\//, 'https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/images/');
-            url = url.replace(/^images\//, 'https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/images/');
-          }
-          if (url.includes('/logo') || url.includes('logo')) {
-            url = url.replace(/logo\.svg/, 'https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/logo.svg');
-          }
-        }
-        return originalOpen.call(this, method, url, ...rest);
-      };
-    </script>
-    <script type="module" crossorigin src="https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/assets/index-A0rU2A4I.js"></script>
-    <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/assets/index-BT5PtLhA.css">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://unstuffd-balls.surge.sh/" />
+    <meta property="twitter:title" content="Unstuff'd | Bulk Empty Juggling Ball Shells" />
+    <meta property="twitter:description" content="Buy premium 4-panel microfiber juggling ball shells in bulk. Save 90% on international shipping by filling locally with millet." />
+    <meta property="twitter:image" content="https://unstuffd-balls.surge.sh/images/optimized/dsc_2684a.jpg" />
+
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAoxu_rOK73b2zeNfaG2TrqqTh1FEFM7zVZcJh18oTBEsY_S7uzjhkoElyDw6yVMI6BDUw3dpMZllkckA&currency=USD"></script>
+    <script type="module" crossorigin src="/assets/index-D6zKngwi.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-umXW8fJo.css">
   </head>
   <body>
     <div id="root"></div>

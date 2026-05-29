@@ -6,9 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unstuff'd | Bulk Empty Juggling Ball Shells</title>
     <script src="https://www.paypal.com/sdk/js?client-id=BAAoxu_rOK73b2zeNfaG2TrqqTh1FEFM7zVZcJh18oTBEsY_S7uzjhkoElyDw6yVMI6BDUw3dpMZllkckA&currency=USD"></script>
-    <script type="module" crossorigin>
-      // Override the base URL for images before the app loads
-      window.__IMAGES_BASE_URL__ = 'https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/images/optimized/';
+    <script>
+      // Intercept fetch requests to rewrite image paths
+      const originalFetch = window.fetch;
+      window.fetch = function(...args) {
+        let url = args[0];
+        if (typeof url === 'string') {
+          // Rewrite image paths from relative to CDN
+          if (url.includes('/images/') || url.includes('images/')) {
+            url = url.replace(/^\/images\//, 'https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/images/');
+            url = url.replace(/^images\//, 'https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/images/');
+          }
+          if (url.includes('/logo') || url.includes('logo')) {
+            url = url.replace(/logo\.svg/, 'https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/logo.svg');
+          }
+          args[0] = url;
+        }
+        return originalFetch.apply(this, args);
+      };
+
+      // Also patch XMLHttpRequest
+      const originalOpen = XMLHttpRequest.prototype.open;
+      XMLHttpRequest.prototype.open = function(method, url, ...rest) {
+        if (typeof url === 'string') {
+          if (url.includes('/images/') || url.includes('images/')) {
+            url = url.replace(/^\/images\//, 'https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/images/');
+            url = url.replace(/^images\//, 'https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/images/');
+          }
+          if (url.includes('/logo') || url.includes('logo')) {
+            url = url.replace(/logo\.svg/, 'https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/logo.svg');
+          }
+        }
+        return originalOpen.call(this, method, url, ...rest);
+      };
     </script>
     <script type="module" crossorigin src="https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/assets/index-A0rU2A4I.js"></script>
     <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/yoramazing1/ustuffedpublic@main/assets/index-BT5PtLhA.css">
